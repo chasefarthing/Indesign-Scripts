@@ -2,9 +2,7 @@
 // Odd things:
 // var oneInch Creates a variable to convert different measurement units back to the inches equivalent
 //
-// To Do:
-// Add radio button to select type of mechanical
-// Add If Else statements based on what radio button was selected
+// To Do
 // Clean up and simplify 
 
 
