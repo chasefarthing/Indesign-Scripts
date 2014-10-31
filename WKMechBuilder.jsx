@@ -794,7 +794,7 @@ trackingTextFrame.textFramePreferences.verticalJustification = VerticalJustifica
 // USAGE
 if (mechType === "Column"){
 var usageTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"))
-usageTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .957 + oneInch * .665, 0,trimHeight + bleedBottom + oneInch * .957 + oneInch * .665 + oneInch * .0625, oneInch * 8.09];
+usageTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * 1.037 + oneInch * .665, 0,trimHeight + bleedBottom + oneInch * 1.037 + oneInch * .665 + oneInch * .0625, oneInch * 8.09];
 }
 
 else {
