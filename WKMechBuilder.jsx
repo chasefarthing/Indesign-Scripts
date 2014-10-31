@@ -178,8 +178,9 @@ marginBottom.onChange = function () {marginBottom.text = convert_units (marginBo
 var myButtonGroup = w.add ("group");
 myButtonGroup.alignment = "right";
 myButtonGroup.orientation = "row";
-myButtonGroup.add ("button", undefined, "OK");
 myButtonGroup.add ("button", undefined, "Cancel");
+myButtonGroup.add ("button", undefined, "OK");
+
 
 if (w.show () == 1){ 
 
