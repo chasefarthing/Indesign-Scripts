@@ -19,15 +19,28 @@ function mech (doc)
 	w.alignChildren = "top", "right";
 
 
-	var main = w.add ('panel');
+	var main = w.add ('group');
 	var main2 = w.add ('group');
+	var top = main.add('panel');
+	var top2 = main.add('panel');
 	var sub = main2.add ('panel');
 	var sub2 = main2.add ('panel');
-		//main.alignChildren = ['right', 'top'];
-		main.orientation = 'column';
-		main.alignChildren = "top", "right";
+		main.orientation = 'row';
+		top.orientation = 'column';
+		top2.orientation = 'column';		
+		main.alignChildren = "top", "left";
+		main.alignment = "left";
+
+
+		top.alignment = "bottom", "left";
+		top.alignChildren = "top", "left";
+
+		top2.alignment = "bottom", "right";
+		top2.alignChildren = "top", "left";
+	
 		main2.orientation = 'row';
 		main2.alignChildren = "top", "right";
+		main2.alignChildren = "top", "left";
 
 		sub.orientation = 'column';
 		sub.alignChildren = "top", "right";
@@ -36,8 +49,14 @@ function mech (doc)
 
 
 
-		var g1 = main.add ("group");
-		var g2 = main.add ("group");
+		var g1 = top2.add ("group");
+		var g2 = top2.add ("group");
+
+		var t1 = top.add ("group");
+
+
+
+
 		var g3 = sub.add ("group");
 		var g4 = sub.add ("group");
 		var g5 = sub.add ("group");
@@ -51,6 +70,8 @@ function mech (doc)
 
 		g1.alignment =  "right";
 		g2.alignment =  "right";
+
+
 		g3.alignment =  "right";
 		g4.alignment =  "right";
 		g5.alignment =  "right";
@@ -64,6 +85,11 @@ function mech (doc)
 
 		g1.orientation = 'row';
 		g2.orientation = 'row';
+
+		t1.orientation = 'column';
+		t1.alignment = "left";
+		t1.alignChildren = "left";
+
 		g3.orientation = 'row';
 		g4.orientation = 'row';
 		g5.orientation = 'row';
@@ -89,8 +115,12 @@ var trimWidth = g2.add ("edittext");
 trimWidth.characters = 8;
 trimWidth.text = convert_units ("8.5 in", doc_unit);
 
-
-
+t1.add ("statictext", undefined, "Mech Type");
+var radio1 = t1.add ("radiobutton", undefined, "Print page");
+var radio2 = t1.add ("radiobutton", undefined, "Spread");
+var radio3 = t1.add ("radiobutton", undefined, "Newspaper");
+var radio4 = t1.add ("radiobutton", undefined, "OOH Bulletin");
+var radio5 = t1.add ("radiobutton", undefined, "Bus Shelter");
 
 
 //					BLEED INPUT
@@ -665,8 +695,8 @@ printerBar.geometricBounds = [-slugTop / 2 - bleedTop * .5 - oneInch * .2712, tr
 // Change to IF statement for different setups
 
 
-printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
-//printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
+//printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
+printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
 printerBar.fit (FitOptions.CONTENT_TO_FRAME);
 printerBar.fit (FitOptions.PROPORTIONALLY);
 printerBar.fit (FitOptions.CENTER_CONTENT);
@@ -677,8 +707,8 @@ printerBar.fit (FitOptions.CENTER_CONTENT);
 var WK = myPage.rectangles.add(myDocument.layers.item("Crops Legend"));
 WK.geometricBounds = [trimHeight + bleedBottom + oneInch * .687, trimWidth - oneInch * .6583, trimHeight + bleedBottom + oneInch * .687 + oneInch * .3069, trimWidth];
 
-WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
-//WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
+//WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
+WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
 WK.fit (FitOptions.CONTENT_TO_FRAME);
 WK.fit (FitOptions.PROPORTIONALLY);
 WK.fit (FitOptions.CENTER_CONTENT);
