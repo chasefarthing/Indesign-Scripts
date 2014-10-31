@@ -791,10 +791,17 @@ trackingTextFrame.parentStory.paragraphs.item(0).pointSize = 5.75;
 trackingTextFrame.textFramePreferences.verticalJustification = VerticalJustification.CENTER_ALIGN;
 
 
-
 // USAGE
+if (mechType === "Column"){
+var usageTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"))
+usageTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .957 + oneInch * .665, 0,trimHeight + bleedBottom + oneInch * .957 + oneInch * .665 + oneInch * .0625, oneInch * 8.09];
+}
+
+else {
 var usageTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"));
 usageTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .937 + oneInch * .665, 0,trimHeight + bleedBottom + oneInch * .937 + oneInch * .665 + oneInch * .0625, oneInch * 8.09];
+}
+
 usageTextFrame.contents = "USAGE Consult Art Production for usage information.";
 usageTextFrame.parentStory.paragraphs.item(0).pointSize = 5.75;
 
@@ -802,9 +809,15 @@ usageTextFrame.parentStory.paragraphs.item(0).pointSize = 5.75;
 
 
 // LEGEND
+if (mechType === "Column"){
+var legendTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"));
+legendTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .937, 0,trimHeight + bleedBottom + oneInch * .937 + oneInch * .685, oneInch * 8.09];
+}
+
+else {
 var legendTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"));
 legendTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .937, 0,trimHeight + bleedBottom + oneInch * .937 + oneInch * .665, oneInch * 8.09];
-
+}
 
 
 
