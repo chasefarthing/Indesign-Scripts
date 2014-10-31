@@ -113,12 +113,14 @@ var trimWidth = g2.add ("edittext");
 trimWidth.characters = 8;
 trimWidth.text = convert_units ("8.5 in", doc_unit);
 
+
 t1.add ("statictext", undefined, "Mech Type");
-var radio1 = t1.add ("radiobutton", undefined, "Print page");
-var radio2 = t1.add ("radiobutton", undefined, "Spread");
-var radio3 = t1.add ("radiobutton", undefined, "Newspaper");
-var radio4 = t1.add ("radiobutton", undefined, "OOH Bulletin");
-var radio5 = t1.add ("radiobutton", undefined, "Bus Shelter");
+var r1 = t1.add ("radiobutton", undefined, "Print page");
+var r2 = t1.add ("radiobutton", undefined, "Spread");
+var r3 = t1.add ("radiobutton", undefined, "Column");
+var r4 = t1.add ("radiobutton", undefined, "Newspaper");
+var r5 = t1.add ("radiobutton", undefined, "OOH Bulletin");
+var r6 = t1.add ("radiobutton", undefined, "Bus Shelter");
 
 
 //					BLEED INPUT
@@ -179,7 +181,35 @@ var myButtonGroup = w.add ("group");
 myButtonGroup.alignment = "right";
 myButtonGroup.orientation = "row";
 myButtonGroup.add ("button", undefined, "Cancel");
-myButtonGroup.add ("button", undefined, "OK");
+var OK = myButtonGroup.add ("button", undefined, "OK");
+
+
+// Until radio button is selected
+OK.enabled = false;
+
+
+// Their's probably a simpler way
+r1.onClick = function () {OK.enabled = true};
+r2.onClick = function () {OK.enabled = true};
+r3.onClick = function () {OK.enabled = true};
+r4.onClick = function () {OK.enabled = true};
+r5.onClick = function () {OK.enabled = true};
+r6.onClick = function () {OK.enabled = true};
+
+
+function selected_rbutton (rbuttons)
+ {
+ for (var i = 0; i < rbuttons.children.length; i++)
+ if (rbuttons.children[i].value == true)
+ return rbuttons.children[i].text;
+
+ }
+
+
+
+
+
+
 
 
 if (w.show () == 1){ 
@@ -194,8 +224,10 @@ if (w.show () == 1){
 	var marginRight  = marginRight.text;
 	var marginTop    = marginTop.text;
 	var marginBottom = marginBottom.text;
+	var mechType =  selected_rbutton (t1);
 
-	myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom);}
+
+	myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom, mechType);}
 
 
 	else {
@@ -277,7 +309,7 @@ function doc_units ()
 
 
 // The creation of the mechanical (the guts)
-function myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom){
+function myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom, mechType){
 
 var doc_unit = doc_units ();
 // Create a new document.
