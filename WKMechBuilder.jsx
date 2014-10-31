@@ -115,12 +115,16 @@ trimWidth.text = convert_units ("8.5 in", doc_unit);
 
 
 t1.add ("statictext", undefined, "Mech Type");
-var r1 = t1.add ("radiobutton", undefined, "Print page");
-var r2 = t1.add ("radiobutton", undefined, "Spread");
-var r3 = t1.add ("radiobutton", undefined, "Column");
-var r4 = t1.add ("radiobutton", undefined, "Newspaper");
-var r5 = t1.add ("radiobutton", undefined, "OOH Bulletin");
-var r6 = t1.add ("radiobutton", undefined, "Bus Shelter");
+var r1 = t1.add ("radiobutton", undefined, "Bus Shelter");
+var r2 = t1.add ("radiobutton", undefined, "Column");
+var r3 = t1.add ("radiobutton", undefined, "Newspaper");
+var r4 = t1.add ("radiobutton", undefined, "OOH Bulletin");
+var r5 = t1.add ("radiobutton", undefined, "Print Page");
+var r6 = t1.add ("radiobutton", undefined, "Spread");
+
+
+
+
 
 
 //					BLEED INPUT
@@ -722,11 +726,37 @@ safetyTextTopRight.parentStory.paragraphs.item(0).pointSize = 5.75;
 var printerBar = myPage.rectangles.add(myDocument.layers.item("Crops Legend"));
 printerBar.geometricBounds = [-slugTop / 2 - bleedTop * .5 - oneInch * .2712, trimWidth / 2 - oneInch * 4, -slugTop / 2 - bleedTop *.5 + oneInch * .2712, trimWidth / 2 + oneInch * 4];
 
-// Change to IF statement for different setups
+// Tried using Logical Operators..
 
 
+if (mechType === "Print Page")
+printerBar.place (File(Folder(['WK/z_common/SWOP proofbar.pdf'])), false);
+//printerBar.place (File(Folder.desktop +'/Mech/SWOP proofbar.pdf'), false);
+
+else if (mechType === "Spread")
+printerBar.place (File(Folder(['WK/z_common/SWOP proofbar.pdf'])), false);
+//printerBar.place (File(Folder.desktop +'/Mech/SWOP proofbar.pdf'), false);
+
+else if (mechType === "Newspaper")
+printerBar.place (File(Folder(['WK/z_common/SNAP proofbar.pdf'])), false);
+//printerBar.place (File(Folder.desktop +'/Mech/SNAP proofbar.pdf'), false);
+
+else if (mechType === "Bus Shelter")
 printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
 //printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
+
+else if (mechType === "OOH Bulletin")
+printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
+//printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
+
+else if (mechType === "Column")
+printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
+//printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
+
+
+
+
+
 printerBar.fit (FitOptions.CONTENT_TO_FRAME);
 printerBar.fit (FitOptions.PROPORTIONALLY);
 printerBar.fit (FitOptions.CENTER_CONTENT);
@@ -737,8 +767,8 @@ printerBar.fit (FitOptions.CENTER_CONTENT);
 var WK = myPage.rectangles.add(myDocument.layers.item("Crops Legend"));
 WK.geometricBounds = [trimHeight + bleedBottom + oneInch * .687, trimWidth - oneInch * .6583, trimHeight + bleedBottom + oneInch * .687 + oneInch * .3069, trimWidth];
 
-WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
-//WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
+//WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
+WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
 WK.fit (FitOptions.CONTENT_TO_FRAME);
 WK.fit (FitOptions.PROPORTIONALLY);
 WK.fit (FitOptions.CENTER_CONTENT);
@@ -790,7 +820,27 @@ else{
 }
 
 // IF Statement here
+
+
+if (mechType === "Print Page")
+legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tDMAX\t ";
+
+else if (mechType === "Spread")
+legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tGUTTER\t ";
+
+else if (mechType === "Column")// REWORK
+legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tGUTTER\t ";
+
+else if (mechType === "Newspaper")
+legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPAPER\tn/a\rTITLE\tn/a\tAD\tn/a\tAP\tn/a\tISSUE\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rCLIENT\tn/a\tCW\tn/a\tILLUS\tn/a\tLIVE\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tGUTTER\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tDMAX\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\t \t ";
+
+else if (mechType === "Bus Shelter")
+legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tLOCATION\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tSAFETY\t \rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tVIEWING\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tACTUAL\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tSCALE\t ";
+
+else if (mechType === "OOH Bulletin")
 legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tLOCATION\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tACTUAL\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSCALE\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\t \t ";
+
+
 
 
 var myText = legendTextFrame.parentStory.texts.item(0);
