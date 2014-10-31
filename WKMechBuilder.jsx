@@ -767,8 +767,8 @@ printerBar.fit (FitOptions.CENTER_CONTENT);
 var WK = myPage.rectangles.add(myDocument.layers.item("Crops Legend"));
 WK.geometricBounds = [trimHeight + bleedBottom + oneInch * .687, trimWidth - oneInch * .6583, trimHeight + bleedBottom + oneInch * .687 + oneInch * .3069, trimWidth];
 
-//WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
-WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
+WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
+//WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
 WK.fit (FitOptions.CONTENT_TO_FRAME);
 WK.fit (FitOptions.PROPORTIONALLY);
 WK.fit (FitOptions.CENTER_CONTENT);
