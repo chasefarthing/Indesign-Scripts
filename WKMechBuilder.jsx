@@ -829,10 +829,10 @@ else if (mechType === "Spread")
 legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tGUTTER\t ";
 
 else if (mechType === "Column")// REWORK
-legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tGUTTER\t ";
+legendTextFrame.contents = "JOB\tn/a\tAD\tn/a\tAP\tn/a\tFORMAT\tn/a\rTITLE\tn/a\tCW\tn/a\tCOLOR\tn/a\tISSUE\t \rCLIENT\tn/a\tSD\tn/a\tPHOTO\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSM\tn/a\tILLUS\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tPM\tn/a\tDESIGN\tn/a\tSAFETY\t \rECD\tn/a\tAE\tn/a\tPAPER\tn/a\tDMAX\t \rCD\tn/a\tPP\tn/a\tINK\tn/a\t\t ";
 
 else if (mechType === "Newspaper")
-legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPAPER\tn/a\rTITLE\tn/a\tAD\tn/a\tAP\tn/a\tISSUE\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rCLIENT\tn/a\tCW\tn/a\tILLUS\tn/a\tLIVE\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tGUTTER\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tDMAX\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\t \t ";
+legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPAPER\tn/a\rTITLE\tn/a\tAD\tn/a\tAP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tILLUS\tn/a\tLIVE\t \rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tGUTTER\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tDMAX\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\t \t ";
 
 else if (mechType === "Bus Shelter")
 legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tLOCATION\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tSAFETY\t \rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tVIEWING\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tACTUAL\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tSCALE\t ";
