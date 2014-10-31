@@ -683,7 +683,7 @@ safetyTextLeftTop.parentStory.paragraphs.item(0).pointSize = 5.75;
 safetyTextLeftBottom.parentStory.paragraphs.item(0).pointSize = 5.75;
 safetyTextTopLeft.parentStory.paragraphs.item(0).pointSize = 5.75;
 safetyTextTopRight.parentStory.paragraphs.item(0).pointSize = 5.75;
-// safetyTextTopRight.parentStory.paragraphs.item(0).app.fonts.item("Geneva");
+
 
 
 
