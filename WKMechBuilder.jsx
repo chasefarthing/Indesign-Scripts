@@ -25,78 +25,78 @@ function mech (doc)
 	var top2 = main.add('panel');
 	var sub = main2.add ('panel');
 	var sub2 = main2.add ('panel');
-		main.orientation = 'row';
-		top.orientation = 'column';
-		top2.orientation = 'column';		
-		main.alignChildren = "fill", "fill";
-		main.alignment = "left";
+	main.orientation = 'row';
+	top.orientation = 'column';
+	top2.orientation = 'column';		
+	main.alignChildren = "fill", "fill";
+	main.alignment = "left";
 
 
 	
 
-		top2.alignment = "bottom";
+	top2.alignment = "bottom";
 
 	
-		main2.orientation = 'row';
+	main2.orientation = 'row';
 
 
-		sub.orientation = 'column';
-		sub.alignChildren = "top", "right";
-		sub2.orientation = 'column';
-		sub2.alignChildren = "top", "right";
-
-
-
-		var g1 = top2.add ("group");
-		var g2 = top2.add ("group");
-
-		var t1 = top.add ("group");
+	sub.orientation = 'column';
+	sub.alignChildren = "top", "right";
+	sub2.orientation = 'column';
+	sub2.alignChildren = "top", "right";
 
 
 
+	var g1 = top2.add ("group");
+	var g2 = top2.add ("group");
 
-		var g3 = sub.add ("group");
-		var g4 = sub.add ("group");
-		var g5 = sub.add ("group");
-		var g6 = sub.add ("group");
-
-		var s3 = sub2.add ("group");
-		var s4 = sub2.add ("group");
-		var s5 = sub2.add ("group");
-		var s6 = sub2.add ("group");
+	var t1 = top.add ("group");
 
 
-		g1.alignment =  "right";
-		g2.alignment =  "right";
 
 
-		g3.alignment =  "right";
-		g4.alignment =  "right";
-		g5.alignment =  "right";
-		g6.alignment =  "right";
+	var g3 = sub.add ("group");
+	var g4 = sub.add ("group");
+	var g5 = sub.add ("group");
+	var g6 = sub.add ("group");
 
-		s3.alignment =  "right";
-		s4.alignment =  "right";
-		s5.alignment =  "right";
-		s6.alignment =  "right";
+	var s3 = sub2.add ("group");
+	var s4 = sub2.add ("group");
+	var s5 = sub2.add ("group");
+	var s6 = sub2.add ("group");
 
 
-		g1.orientation = 'row';
-		g2.orientation = 'row';
+	g1.alignment =  "right";
+	g2.alignment =  "right";
 
-		t1.orientation = 'column';
 
-		t1.alignChildren = "left";
+	g3.alignment =  "right";
+	g4.alignment =  "right";
+	g5.alignment =  "right";
+	g6.alignment =  "right";
 
-		g3.orientation = 'row';
-		g4.orientation = 'row';
-		g5.orientation = 'row';
-		g6.orientation = 'row';
+	s3.alignment =  "right";
+	s4.alignment =  "right";
+	s5.alignment =  "right";
+	s6.alignment =  "right";
 
-		s3.orientation = 'row';
-		s4.orientation = 'row';
-		s5.orientation = 'row';
-		s6.orientation = 'row';
+
+	g1.orientation = 'row';
+	g2.orientation = 'row';
+
+	t1.orientation = 'column';
+
+	t1.alignChildren = "left";
+
+	g3.orientation = 'row';
+	g4.orientation = 'row';
+	g5.orientation = 'row';
+	g6.orientation = 'row';
+
+	s3.orientation = 'row';
+	s4.orientation = 'row';
+	s5.orientation = 'row';
+	s6.orientation = 'row';
 
 //				TRIM INPUT
 
@@ -202,45 +202,45 @@ r6.onClick = function () {OK.enabled = true};
 
 
 function selected_rbutton (rbuttons)
- {
- for (var i = 0; i < rbuttons.children.length; i++)
- if (rbuttons.children[i].value == true)
- return rbuttons.children[i].text;
-
- }
-
-
-
-
-
-
-
-
-if (w.show () == 1){ 
-
-	var trimHeight   = trimHeight.text;
-	var trimWidth    = trimWidth.text;
-	var bleedLeft    = bleedLeft.text;
-	var bleedRight   = bleedRight.text;
-	var bleedTop     = bleedTop.text;
-	var bleedBottom  = bleedBottom.text;
-	var marginLeft   = marginLeft.text;
-	var marginRight  = marginRight.text;
-	var marginTop    = marginTop.text;
-	var marginBottom = marginBottom.text;
-	var mechType =  selected_rbutton (t1);
-
-
-	myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom, mechType);}
-
-
-	else {
-		exit ();
+{
+	for (var i = 0; i < rbuttons.children.length; i++)
+		if (rbuttons.children[i].value == true)
+			return rbuttons.children[i].text;
 
 	}
 
 
-}
+
+
+
+
+
+
+	if (w.show () == 1){ 
+
+		var trimHeight   = trimHeight.text;
+		var trimWidth    = trimWidth.text;
+		var bleedLeft    = bleedLeft.text;
+		var bleedRight   = bleedRight.text;
+		var bleedTop     = bleedTop.text;
+		var bleedBottom  = bleedBottom.text;
+		var marginLeft   = marginLeft.text;
+		var marginRight  = marginRight.text;
+		var marginTop    = marginTop.text;
+		var marginBottom = marginBottom.text;
+		var mechType =  selected_rbutton (t1);
+
+
+		myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom, mechType);}
+
+
+		else {
+			exit ();
+
+		}
+
+
+	}
 
 
 
@@ -315,7 +315,7 @@ function doc_units ()
 // The creation of the mechanical (the guts)
 function myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom, mechType){
 
-var doc_unit = doc_units ();
+	var doc_unit = doc_units ();
 // Create a new document.
 var myDocument = app.documents.add()
 var myPage = myDocument.pages.item(0);
@@ -335,12 +335,12 @@ var oneInch = Number(oneInch);
 with (myDocument.viewPreferences){
 
 
-var myOldXUnits = horizontalMeasurementUnits;
-if (myOldXUnits == MeasurementUnits.inches){
-var unitQuotes = "\u0022";
-}else{
-	var unitQuotes = "";
-}
+	var myOldXUnits = horizontalMeasurementUnits;
+	if (myOldXUnits == MeasurementUnits.inches){
+		var unitQuotes = "\u0022";
+	}else{
+		var unitQuotes = "";
+	}
 
 }
 
@@ -730,27 +730,27 @@ printerBar.geometricBounds = [-slugTop / 2 - bleedTop * .5 - oneInch * .2712, tr
 
 
 if (mechType === "Print Page")
-printerBar.place (File(Folder(['WK/z_common/SWOP proofbar.pdf'])), false);
+	printerBar.place (File(Folder(['WK/z_common/SWOP proofbar.pdf'])), false);
 //printerBar.place (File(Folder.desktop +'/Mech/SWOP proofbar.pdf'), false);
 
 else if (mechType === "Spread")
-printerBar.place (File(Folder(['WK/z_common/SWOP proofbar.pdf'])), false);
+	printerBar.place (File(Folder(['WK/z_common/SWOP proofbar.pdf'])), false);
 //printerBar.place (File(Folder.desktop +'/Mech/SWOP proofbar.pdf'), false);
 
 else if (mechType === "Newspaper")
-printerBar.place (File(Folder(['WK/z_common/SNAP proofbar.pdf'])), false);
+	printerBar.place (File(Folder(['WK/z_common/SNAP proofbar.pdf'])), false);
 //printerBar.place (File(Folder.desktop +'/Mech/SNAP proofbar.pdf'), false);
 
 else if (mechType === "Bus Shelter")
-printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
+	printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
 //printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
 
 else if (mechType === "OOH Bulletin")
-printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
+	printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
 //printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
 
 else if (mechType === "Column")
-printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
+	printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
 //printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
 
 
@@ -793,13 +793,13 @@ trackingTextFrame.textFramePreferences.verticalJustification = VerticalJustifica
 
 // USAGE
 if (mechType === "Column"){
-var usageTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"))
-usageTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * 1.037 + oneInch * .665, 0,trimHeight + bleedBottom + oneInch * 1.037 + oneInch * .665 + oneInch * .0625, oneInch * 8.09];
+	var usageTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"))
+	usageTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * 1.037 + oneInch * .665, 0,trimHeight + bleedBottom + oneInch * 1.037 + oneInch * .665 + oneInch * .0625, oneInch * 8.09];
 }
 
 else {
-var usageTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"));
-usageTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .937 + oneInch * .665, 0,trimHeight + bleedBottom + oneInch * .937 + oneInch * .665 + oneInch * .0625, oneInch * 8.09];
+	var usageTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"));
+	usageTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .937 + oneInch * .665, 0,trimHeight + bleedBottom + oneInch * .937 + oneInch * .665 + oneInch * .0625, oneInch * 8.09];
 }
 
 usageTextFrame.contents = "USAGE Consult Art Production for usage information.";
@@ -810,13 +810,13 @@ usageTextFrame.parentStory.paragraphs.item(0).pointSize = 5.75;
 
 // LEGEND
 if (mechType === "Column"){
-var legendTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"));
-legendTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .937, 0,trimHeight + bleedBottom + oneInch * .937 + oneInch * .685, oneInch * 8.09];
+	var legendTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"));
+	legendTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .937, 0,trimHeight + bleedBottom + oneInch * .937 + oneInch * .685, oneInch * 8.09];
 }
 
 else {
-var legendTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"));
-legendTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .937, 0,trimHeight + bleedBottom + oneInch * .937 + oneInch * .665, oneInch * 8.09];
+	var legendTextFrame = myPage.textFrames.add(myDocument.layers.item("Crops Legend"));
+	legendTextFrame.geometricBounds = [trimHeight + bleedBottom + oneInch * .937, 0,trimHeight + bleedBottom + oneInch * .937 + oneInch * .665, oneInch * 8.09];
 }
 
 
@@ -836,22 +836,22 @@ else{
 
 
 if (mechType === "Print Page")
-legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tDMAX\t ";
+	legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tDMAX\t ";
 
 else if (mechType === "Spread")
-legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tGUTTER\t ";
+	legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tGUTTER\t ";
 
 else if (mechType === "Column")// REWORK
-legendTextFrame.contents = "JOB\tn/a\tAD\tn/a\tAP\tn/a\tFORMAT\tn/a\rTITLE\tn/a\tCW\tn/a\tCOLOR\tn/a\tISSUE\t \rCLIENT\tn/a\tSD\tn/a\tPHOTO\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSM\tn/a\tILLUS\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tPM\tn/a\tDESIGN\tn/a\tSAFETY\t \rECD\tn/a\tAE\tn/a\tPAPER\tn/a\tDMAX\t \rCD\tn/a\tPP\tn/a\tINK\tn/a\t\t ";
+	legendTextFrame.contents = "JOB\tn/a\tAD\tn/a\tAP\tn/a\tFORMAT\tn/a\rTITLE\tn/a\tCW\tn/a\tCOLOR\tn/a\tISSUE\t \rCLIENT\tn/a\tSD\tn/a\tPHOTO\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSM\tn/a\tILLUS\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tPM\tn/a\tDESIGN\tn/a\tSAFETY\t \rECD\tn/a\tAE\tn/a\tPAPER\tn/a\tDMAX\t \rCD\tn/a\tPP\tn/a\tINK\tn/a\t\t ";
 
 else if (mechType === "Newspaper")
-legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPAPER\tn/a\rTITLE\tn/a\tAD\tn/a\tAP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tILLUS\tn/a\tLIVE\t \rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tGUTTER\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tDMAX\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\t \t ";
+	legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPAPER\tn/a\rTITLE\tn/a\tAD\tn/a\tAP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tILLUS\tn/a\tLIVE\t \rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tGUTTER\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tDMAX\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\t \t ";
 
 else if (mechType === "Bus Shelter")
-legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tLOCATION\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tSAFETY\t \rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tVIEWING\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tACTUAL\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tSCALE\t ";
+	legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tLOCATION\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tSAFETY\t \rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tVIEWING\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tACTUAL\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tSCALE\t ";
 
 else if (mechType === "OOH Bulletin")
-legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tLOCATION\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tACTUAL\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSCALE\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\t \t ";
+	legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tLOCATION\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tACTUAL\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSCALE\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\t \t ";
 
 
 
