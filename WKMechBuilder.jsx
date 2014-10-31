@@ -695,8 +695,8 @@ printerBar.geometricBounds = [-slugTop / 2 - bleedTop * .5 - oneInch * .2712, tr
 // Change to IF statement for different setups
 
 
-//printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
-printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
+printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
+//printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
 printerBar.fit (FitOptions.CONTENT_TO_FRAME);
 printerBar.fit (FitOptions.PROPORTIONALLY);
 printerBar.fit (FitOptions.CENTER_CONTENT);
@@ -707,8 +707,8 @@ printerBar.fit (FitOptions.CENTER_CONTENT);
 var WK = myPage.rectangles.add(myDocument.layers.item("Crops Legend"));
 WK.geometricBounds = [trimHeight + bleedBottom + oneInch * .687, trimWidth - oneInch * .6583, trimHeight + bleedBottom + oneInch * .687 + oneInch * .3069, trimWidth];
 
-//WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
-WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
+WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
+//WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
 WK.fit (FitOptions.CONTENT_TO_FRAME);
 WK.fit (FitOptions.PROPORTIONALLY);
 WK.fit (FitOptions.CENTER_CONTENT);
