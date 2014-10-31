@@ -16,7 +16,7 @@ function mech (doc)
 {
 	var w = new Window ("dialog", "W+K Mech Builder");
 	var doc_unit = doc_units ();
-	w.alignChildren = "top", "right";
+	w.alignChildren = "fill", "fill";
 
 
 	var main = w.add ('group');
@@ -28,19 +28,17 @@ function mech (doc)
 		main.orientation = 'row';
 		top.orientation = 'column';
 		top2.orientation = 'column';		
-		main.alignChildren = "top", "left";
+		main.alignChildren = "fill", "fill";
 		main.alignment = "left";
 
 
-		top.alignment = "bottom", "left";
-		top.alignChildren = "top", "left";
+	
 
-		top2.alignment = "bottom", "right";
-		top2.alignChildren = "top", "left";
+		top2.alignment = "bottom";
+
 	
 		main2.orientation = 'row';
-		main2.alignChildren = "top", "right";
-		main2.alignChildren = "top", "left";
+
 
 		sub.orientation = 'column';
 		sub.alignChildren = "top", "right";
@@ -87,7 +85,7 @@ function mech (doc)
 		g2.orientation = 'row';
 
 		t1.orientation = 'column';
-		t1.alignment = "left";
+
 		t1.alignChildren = "left";
 
 		g3.orientation = 'row';
@@ -683,7 +681,6 @@ safetyTextLeftTop.parentStory.paragraphs.item(0).pointSize = 5.75;
 safetyTextLeftBottom.parentStory.paragraphs.item(0).pointSize = 5.75;
 safetyTextTopLeft.parentStory.paragraphs.item(0).pointSize = 5.75;
 safetyTextTopRight.parentStory.paragraphs.item(0).pointSize = 5.75;
-
 
 
 
