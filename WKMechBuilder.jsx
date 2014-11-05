@@ -751,14 +751,12 @@ safetyTextTopRight.parentStory.paragraphs.item(0).pointSize = 5.75;
 
 
 
-var noStroke = {
-	strokeWeight: 0,
-};
 
 // Draw the rectangle for the GRACOL Image
-var printerBar = myPage.rectangles.add(myDocument.layers.item("Crops Legend"), undefined, undefined, noStroke);
+var printerBar = myPage.rectangles.add(myDocument.layers.item("Crops Legend"));
 printerBar.geometricBounds = [-slugTop / 2 - bleedTop * .5 - oneInch * .2712, trimWidth / 2 - oneInch * 4, -slugTop / 2 - bleedTop *.5 + oneInch * .2712, trimWidth / 2 + oneInch * 4];
 
+printerBar.strokeWeight = 0;
 // Tried using Logical Operators..
 
 
@@ -799,6 +797,8 @@ printerBar.fit (FitOptions.CENTER_CONTENT);
 // Draw the rectangle for the W + K Logo
 var WK = myPage.rectangles.add(myDocument.layers.item("Crops Legend"), undefined, undefined, noStroke);
 WK.geometricBounds = [trimHeight + bleedBottom + oneInch * .687, trimWidth - oneInch * .6583, trimHeight + bleedBottom + oneInch * .687 + oneInch * .3069, trimWidth];
+
+WK.strokeWeight = 0;
 
 WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
 //WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
