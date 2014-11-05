@@ -19,20 +19,32 @@ function mech (doc)
 
 	var main = w.add ('group');
 	var main2 = w.add ('group');
+
 	var top = main.add('panel');
-	var top2 = main.add('panel');
+	var top2 = main.add('group');
+
 	var sub = main2.add ('panel');
 	var sub2 = main2.add ('panel');
+
+	var sub3 = top2.add ('panel');
+	var sub4 = top2.add ('panel');
+
 	main.orientation = 'row';
+
 	top.orientation = 'column';
-	top2.orientation = 'column';		
+	top2.orientation = 'column';	
+	top2.alignChildren = "right";
+
+
 	main.alignChildren = "fill", "fill";
 	main.alignment = "left";
 
 
 	
 
-	top2.alignment = "bottom";
+	// top2.alignment = "bottom";
+	// sub3.alignment = "bottom";
+
 
 	
 	main2.orientation = 'row';
@@ -43,15 +55,14 @@ function mech (doc)
 	sub2.orientation = 'column';
 	sub2.alignChildren = "top", "right";
 
-
-
-	var g1 = top2.add ("group");
-	var g2 = top2.add ("group");
+	var g1 = sub3.add ("group");
+	var g2 = sub3.add ("group");
 
 	var t1 = top.add ("group");
 
 
-
+	var c3 = sub4.add ("group");
+	var c4 = sub4.add ("group");
 
 	var g3 = sub.add ("group");
 	var g4 = sub.add ("group");
@@ -66,6 +77,9 @@ function mech (doc)
 
 	g1.alignment =  "right";
 	g2.alignment =  "right";
+
+	c4.alignment =  "left";
+	sub4.alignChildren = "left";
 
 
 	g3.alignment =  "right";
@@ -110,6 +124,14 @@ g2.add ("statictext", undefined, "Trim Width:");
 var trimWidth = g2.add ("edittext");
 trimWidth.characters = 8;
 trimWidth.text = convert_units ("8.5 in", doc_unit);
+
+
+
+c3.add ("statictext", undefined, "For Spreads");
+c4.add ("statictext", undefined, "Gutter:");
+var gutter = c4.add ("edittext");
+gutter.characters = 8;
+gutter.text = convert_units (".25 in", doc_unit);
 
 
 t1.add ("statictext", undefined, "Mech Type");
@@ -167,6 +189,8 @@ marginBottom.text = convert_units (".25 in", doc_unit);
 // Convert units back to default when changed ie pts > in
 trimHeight.onChange = function () {trimHeight.text = convert_units (trimHeight.text, doc_unit)};
 trimWidth.onChange = function () {trimWidth.text = convert_units (trimWidth.text, doc_unit)};
+
+gutter.onChange = function () {gutter.text = convert_units (gutter.text, doc_unit)};
 
 bleedLeft.onChange = function () {bleedLeft.text = convert_units (bleedLeft.text, doc_unit)};
 bleedRight.onChange = function () {bleedRight.text = convert_units (bleedRight.text, doc_unit)};
@@ -227,9 +251,10 @@ function selected_rbutton (rbuttons)
 		var marginTop    = marginTop.text;
 		var marginBottom = marginBottom.text;
 		var mechType =  selected_rbutton (t1);
+		var gutter = gutter.text;
 
 
-		myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom, mechType);}
+		myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom, mechType, gutter);}
 
 
 		else {
@@ -311,7 +336,7 @@ function doc_units ()
 
 
 // The creation of the mechanical (the guts)
-function myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom, mechType){
+function myMakeDocument(trimHeight, trimWidth, bleedLeft, bleedRight, bleedTop, bleedBottom, marginLeft, marginRight, marginTop, marginBottom, mechType, gutter){
 
 	var doc_unit = doc_units ();
 // Create a new document.
@@ -390,16 +415,24 @@ slugRightOrOutsideOffset = slugRight;
 
 with (myDocument.pages.item(0).marginPreferences){
 
+
+// ADD IF
+
+var gutter = Number(gutter);
+
+if (mechType === "Spread"){
+
+	columnCount = 2;
+	columnGutter = oneInch * gutter;
+}
+
+else{
+
 	columnCount = 1;
+	columnGutter = oneInch * .25;
 
-// ColumnGutter can be a number or a measurement string.
+}
 
-
-// If Statement for spreads
-// 2 columns
-// Default gutter .25in?
-
-columnGutter = "1p";
 bottom = marginBottom
 
 // When document.documentPreferences.facingPages == true, 
@@ -972,6 +1005,7 @@ approvalTable.cells.everyItem().leftInset = oneInch * .04;
 approvalTable.cells.everyItem().rightInset = oneInch * .03;
 approvalTable.cells.everyItem().height = oneInch * .1875;
 
+approvalTable.column.item(0).leftInset = 0;
 
 
 // Sets all fonts to Univers
