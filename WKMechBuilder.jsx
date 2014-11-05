@@ -1005,7 +1005,7 @@ approvalTable.cells.everyItem().leftInset = oneInch * .04;
 approvalTable.cells.everyItem().rightInset = oneInch * .03;
 approvalTable.cells.everyItem().height = oneInch * .1875;
 
-approvalTable.column.item(0).leftInset = 0;
+approvalTable.column.item(0).cells.leftInset = 0;
 
 
 // Sets all fonts to Univers
