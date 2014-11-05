@@ -1051,8 +1051,11 @@ app.findTextPreferences.fillColor = "Black";
 app.changeTextPreferences.appliedFont = ("Univers LT Std	45 Light");
 myDocument.changeText();
 
+
+//Clear the find/change text preferences.
 app.findTextPreferences = NothingEnum.nothing;
 app.changeTextPreferences = NothingEnum.nothing;
+
 }
 }
 
