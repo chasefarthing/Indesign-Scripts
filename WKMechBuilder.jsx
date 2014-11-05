@@ -1036,12 +1036,23 @@ approvalTable.cells.everyItem().height = oneInch * .1875;
 
 
 
+
+//Clear the find/change text preferences.
+app.findTextPreferences = NothingEnum.nothing;
+app.changeTextPreferences = NothingEnum.nothing;
+
 // Sets all fonts to Univers
-app.findTextPreferences.pointSize = 5.75;
+
+
+
+
+//app.findTextPreferences.pointSize = 5.75;
+app.findTextPreferences.fillColor = "Black";
 app.changeTextPreferences.appliedFont = ("Univers LT Std	45 Light");
 myDocument.changeText();
 
-
+app.findTextPreferences = NothingEnum.nothing;
+app.changeTextPreferences = NothingEnum.nothing;
 }
 }
 
