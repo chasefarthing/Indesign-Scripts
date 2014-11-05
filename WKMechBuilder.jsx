@@ -902,6 +902,7 @@ myTable.cells.everyItem().bottomEdgeStrokeWeight = 0;
 myTable.cells.everyItem().height = oneInch * .02;
 myTable.cells.everyItem().topInset = oneInch * .02;
 myTable.cells.everyItem().bottomInset = oneInch * .02;
+myTable.cells.everyItem().leftInset = oneInch * .0;
 
 // Sets the width for the smaller columns
 myTable.columns.item(0).width = oneInch * .4;
@@ -1001,11 +1002,11 @@ approvalTable.columns.item(14).width = oneInch * .29;
 
 approvalTable.cells.everyItem().topInset = oneInch * .0625;
 approvalTable.cells.everyItem().bottomInset = oneInch * .0625;
-approvalTable.cells.everyItem().leftInset = oneInch * .04;
+approvalTable.cells.everyItem().leftInset = oneInch * .0;
 approvalTable.cells.everyItem().rightInset = oneInch * .03;
 approvalTable.cells.everyItem().height = oneInch * .1875;
 
-approvalTable.column.item(0).cells.leftInset = 0;
+
 
 
 // Sets all fonts to Univers
