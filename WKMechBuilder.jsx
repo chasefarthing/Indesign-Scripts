@@ -1,6 +1,5 @@
-// Chase's Auto Mech Builder 3000
-// Odd things:
-// var oneInch Creates a variable to convert different measurement units back to the inches equivalent
+// Chase's Auto Mech Builder 3000 Odd things: var oneInch Creates a variable to convert different measurement units back
+// to the inches equivalent
 //
 // To Do
 // Clean up and simplify 
@@ -348,6 +347,15 @@ with(myDocument.viewPreferences){
 }
 
 
+//find out the current document's Typographers Quote Preference
+userOriginalQuotePreference = app.activeDocument.textPreferences.typographersQuotes;
+
+app.activeDocument.textPreferences.typographersQuotes = false;
+
+
+
+
+
 // Creates a variable to convert different measurement units back to the inches equivalent
 var oneInch = convert_units("1 in", doc_unit);
 var oneInch = Number(oneInch);
@@ -366,6 +374,7 @@ with (myDocument.viewPreferences){
 	}
 
 }
+
 
 
 
@@ -444,6 +453,7 @@ top = marginTop
 }
 
 myDocument.viewPreferences.rulerOrigin = RulerOrigin.spreadOrigin;
+
 
 
 // Gets rid of the Measurement letters (ie "in") so they can be added as numbers later on
@@ -900,7 +910,7 @@ else if (mechType === "Spread")
 	legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPUB\tn/a\rTITLE\tn/a\tAD\tn/a\tPP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tAP\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tSAFETY\t \rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\tGUTTER\t ";
 
 else if (mechType === "Column")// REWORK
-	legendTextFrame.contents = "JOB\tn/a\tAD\tn/a\tAP\tn/a\tFORMAT\tn/a\rTITLE\tn/a\tCW\tn/a\tCOLOR\tn/a\tISSUE\t \rCLIENT\tn/a\tSD\tn/a\tPHOTO\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSM\tn/a\tILLUS\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tPM\tn/a\tDESIGN\tn/a\tSAFETY\t \rECD\tn/a\tAE\tn/a\tPAPER\tn/a\tDMAX\t \rCD\tn/a\tPP\tn/a\tINK\tn/a\t\t ";
+	legendTextFrame.contents = "JOB\tn/a\tAD\tn/a\tAP\tn/a\tFORMAT\tn/a\rTITLE\tn/a\tCW\tn/a\tCOLOR\tn/a\tISSUE\t \rCLIENT\tn/a\tSD\tn/a\tPHOTO\tn/a\tBLEED\t" + bleedAll + "\rFILE\tn/a\tSM\tn/a\tILLUS\tn/a\tTRIM\t" + trimHeight +unitQuotes + " x " + trimWidth +unitQuotes +"\rOFFICE\tW+K Portland\tPM\tn/a\tDESIGN\tn/a\tSAFETY\t \rECD\tn/a\tAE\tn/a\tPAPER\tn/a\tDMAX\t \rCD\tn/a\tPP\tn/a\tINK\tn/a\t \t ";
 
 else if (mechType === "Newspaper")
 	legendTextFrame.contents = "JOB\tn/a\tCD\tn/a\tAE\tn/a\tPAPER\tn/a\rTITLE\tn/a\tAD\tn/a\tAP\tn/a\tISSUE\t \rCLIENT\tn/a\tCW\tn/a\tILLUS\tn/a\tLIVE\t \rFILE\tn/a\tSD\tn/a\tCOLOR\tn/a\tGUTTER\tn/a\rOFFICE\tW+K Portland\tSM\tn/a\tPHOTO\tn/a\tDMAX\tn/a\rECD\tn/a\tPM\tn/a\tDESIGN\tn/a\t \t ";
@@ -1035,27 +1045,24 @@ approvalTable.cells.everyItem().height = oneInch * .1875;
 
 
 
-
+// Sets all fonts to Univers
 
 //Clear the find/change text preferences.
 app.findTextPreferences = NothingEnum.nothing;
 app.changeTextPreferences = NothingEnum.nothing;
 
-// Sets all fonts to Univers
-
-
-
-
-//app.findTextPreferences.pointSize = 5.75;
-//app.findTextPreferences.fillColor = "Black";
 app.findTextPreferences.appliedParagraphStyle = app.activeDocument.paragraphStyles.item ("[Basic Paragraph]");
 app.changeTextPreferences.appliedFont = ("Univers LT Std	45 Light");
 myDocument.changeText();
 
-
 //Clear the find/change text preferences.
 app.findTextPreferences = NothingEnum.nothing;
 app.changeTextPreferences = NothingEnum.nothing;
+
+//reset Typographers Quote Preference back to the users original setting
+app.activeDocument.textPreferences.typographersQuotes = userOriginalQuotePreference;	
+
+
 
 }
 }
