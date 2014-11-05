@@ -1002,7 +1002,7 @@ approvalTable.columns.item(14).width = oneInch * .29;
 
 approvalTable.cells.everyItem().topInset = oneInch * .0625;
 approvalTable.cells.everyItem().bottomInset = oneInch * .0625;
-approvalTable.cells.everyItem().leftInset = oneInch * .0;
+approvalTable.cells.everyItem().leftInset = oneInch * .04;
 approvalTable.cells.everyItem().rightInset = oneInch * .03;
 approvalTable.cells.everyItem().height = oneInch * .1875;
 
