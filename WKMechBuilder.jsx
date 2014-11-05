@@ -953,7 +953,7 @@ approvalTextFrame.geometricBounds = [trimHeight + slugBottom - oneInch * .5 - on
 
 
 // Insert Approvals as table 
-approvalTextFrame.contents = "\tSIGN\tDATE\t \tSIGN\tDATE\t \tSIGN\tDATE\t \tSIGN\tDATE\t \tSIGN\tDATE\t \tDATE\t\rStudio Designer\t \t \tCreative Director\t \t \tDesigner\t \t \tProject Manager\t \t \tCopyeditor\t \t \t \tTime\t\rStudio Manager\t \t \tCreative Director\t \t \tPrint Producer\t \t \tAccount Exec\t \t \tArt Producer\t \t \t \tMechanical #\t\rArt Director\t \t \tCopywriter\t \t \tRetoucher\t \t \tClient\t \t \tBusiness Affairs\t \t \t \tOutput %\t ";
+approvalTextFrame.contents = " \tSIGN\tDATE\t \tSIGN\tDATE\t \tSIGN\tDATE\t \tSIGN\tDATE\t \tSIGN\tDATE\t \tDATE\t \rStudio Designer\t \t \tCreative Director\t \t \tDesigner\t \t \tProject Manager\t \t \tCopyeditor\t \t \t \tTime\t \rStudio Manager\t \t \tCreative Director\t \t \tPrint Producer\t \t \tAccount Exec\t \t \tArt Producer\t \t \t \tMechanical #\t \rArt Director\t \t \tCopywriter\t \t \tRetoucher\t \t \tClient\t \t \tBusiness Affairs\t \t \t \tOutput %\t ";
 
 var approvalText = approvalTextFrame.parentStory.texts.item(0);
 approvalText.pointSize = 5.75;
