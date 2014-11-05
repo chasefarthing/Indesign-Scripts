@@ -795,7 +795,7 @@ printerBar.fit (FitOptions.CENTER_CONTENT);
 
 
 // Draw the rectangle for the W + K Logo
-var WK = myPage.rectangles.add(myDocument.layers.item("Crops Legend"), undefined, undefined, noStroke);
+var WK = myPage.rectangles.add(myDocument.layers.item("Crops Legend"));
 WK.geometricBounds = [trimHeight + bleedBottom + oneInch * .687, trimWidth - oneInch * .6583, trimHeight + bleedBottom + oneInch * .687 + oneInch * .3069, trimWidth];
 
 WK.strokeWeight = 0;
