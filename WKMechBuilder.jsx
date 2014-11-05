@@ -1047,7 +1047,8 @@ app.changeTextPreferences = NothingEnum.nothing;
 
 
 //app.findTextPreferences.pointSize = 5.75;
-app.findTextPreferences.fillColor = "Black";
+//app.findTextPreferences.fillColor = "Black";
+app.findTextPreferences.appliedFont = "Minion Pro	Regular";
 app.changeTextPreferences.appliedFont = ("Univers LT Std	45 Light");
 myDocument.changeText();
 
