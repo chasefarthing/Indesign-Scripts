@@ -756,33 +756,58 @@ safetyTextTopRight.parentStory.paragraphs.item(0).pointSize = 5.75;
 var printerBar = myPage.rectangles.add(myDocument.layers.item("Crops Legend"));
 printerBar.geometricBounds = [-slugTop / 2 - bleedTop * .5 - oneInch * .2712, trimWidth / 2 - oneInch * 4, -slugTop / 2 - bleedTop *.5 + oneInch * .2712, trimWidth / 2 + oneInch * 4];
 
-printerBar.strokeWeight = 0;
+
 // Tried using Logical Operators..
 
 
 if (mechType === "Print Page")
 	printerBar.place (File(Folder(['WK/z_common/SWOP proofbar.pdf'])), false);
-//printerBar.place (File(Folder.desktop +'/Mech/SWOP proofbar.pdf'), false);
 
 else if (mechType === "Spread")
 	printerBar.place (File(Folder(['WK/z_common/SWOP proofbar.pdf'])), false);
-//printerBar.place (File(Folder.desktop +'/Mech/SWOP proofbar.pdf'), false);
 
 else if (mechType === "Newspaper")
 	printerBar.place (File(Folder(['WK/z_common/SNAP proofbar.pdf'])), false);
-//printerBar.place (File(Folder.desktop +'/Mech/SNAP proofbar.pdf'), false);
 
 else if (mechType === "Bus Shelter")
 	printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
-//printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
 
 else if (mechType === "OOH Bulletin")
 	printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
-//printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
 
 else if (mechType === "Column")
 	printerBar.place (File(Folder(['WK/z_common/GRACoL proofbar.pdf'])), false);
-//printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
+
+
+
+
+
+// //local version
+
+// if (mechType === "Print Page")
+
+// printerBar.place (File(Folder.desktop +'/Mech/SWOP proofbar.pdf'), false);
+
+// else if (mechType === "Spread")
+
+// printerBar.place (File(Folder.desktop +'/Mech/SWOP proofbar.pdf'), false);
+
+// else if (mechType === "Newspaper")
+
+// printerBar.place (File(Folder.desktop +'/Mech/SNAP proofbar.pdf'), false);
+
+// else if (mechType === "Bus Shelter")
+
+// printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
+
+// else if (mechType === "OOH Bulletin")
+
+// printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
+
+// else if (mechType === "Column")
+
+// printerBar.place (File(Folder.desktop +'/Mech/GRACoLproofbar.pdf'), false);
+
 
 
 
@@ -791,14 +816,14 @@ else if (mechType === "Column")
 printerBar.fit (FitOptions.CONTENT_TO_FRAME);
 printerBar.fit (FitOptions.PROPORTIONALLY);
 printerBar.fit (FitOptions.CENTER_CONTENT);
-
+printerBar.strokeColor = "None";
 
 
 // Draw the rectangle for the W + K Logo
 var WK = myPage.rectangles.add(myDocument.layers.item("Crops Legend"));
 WK.geometricBounds = [trimHeight + bleedBottom + oneInch * .687, trimWidth - oneInch * .6583, trimHeight + bleedBottom + oneInch * .687 + oneInch * .3069, trimWidth];
 
-WK.strokeWeight = 0;
+
 
 WK.place (File(Folder(['WK/z_common/W+K_Logo.eps'])), false);
 //WK.place (File(Folder.desktop+'/Mech/W+K_Logo.eps'), false);
@@ -806,7 +831,7 @@ WK.fit (FitOptions.CONTENT_TO_FRAME);
 WK.fit (FitOptions.PROPORTIONALLY);
 WK.fit (FitOptions.CENTER_CONTENT);
 
-
+WK.strokeColor = "None";
 
 
 
