@@ -474,7 +474,7 @@ layerApprovals.layerColor = UIColors.GRAY;
 layerApprovals.ignoreWrap = false;
 layerApprovals.visible = true;
 layerApprovals.printable = true;
-layerApprovals.locked = true;
+
 
 // Crops Legend
 var layerLegend= myDocument.layers.add();
@@ -507,7 +507,7 @@ layerKeylines.layerColor = UIColors.GREEN;
 layerKeylines.ignoreWrap = false;
 layerKeylines.visible = true;
 layerKeylines.printable = true;
-layerKeylines.locked = true;
+
 
 // Guides
 var layerGuides= myDocument.layers.add();
@@ -516,7 +516,7 @@ layerGuides.layerColor = UIColors.LIGHT_BLUE;
 layerGuides.ignoreWrap = false;
 layerGuides.visible = true;
 layerGuides.printable = false;
-layerGuides.locked = true;
+
 
 // Removes the default layer "Layer 1"
 var defaultLayer = myDocument.layers.item("Layer 1");
@@ -1064,7 +1064,9 @@ app.changeTextPreferences = NothingEnum.nothing;
 //reset Typographers Quote Preference back to the users original setting
 app.activeDocument.textPreferences.typographersQuotes = userOriginalQuotePreference;	
 
-
+layerGuides.locked = true;
+layerKeylines.locked = true;
+layerApprovals.locked = true;
 
 }
 }
