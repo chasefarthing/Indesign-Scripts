@@ -361,8 +361,7 @@ var oneInch = convert_units("1 in", doc_unit);
 var oneInch = Number(oneInch);
 
 
-// Check if in inches
-
+// Checks if the doc is in inches and if it is, it will add " to the end of the measurements
 with (myDocument.viewPreferences){
 
 
@@ -422,10 +421,9 @@ slugRightOrOutsideOffset = slugRight;
 
 }
 
+
+
 with (myDocument.pages.item(0).marginPreferences){
-
-
-// ADD IF
 
 var gutter = Number(gutter);
 
@@ -452,6 +450,7 @@ top = marginTop
 
 }
 
+
 myDocument.viewPreferences.rulerOrigin = RulerOrigin.spreadOrigin;
 
 
@@ -475,6 +474,7 @@ layerApprovals.layerColor = UIColors.GRAY;
 layerApprovals.ignoreWrap = false;
 layerApprovals.visible = true;
 layerApprovals.printable = true;
+
 
 // Crops Legend
 var layerLegend= myDocument.layers.add();
@@ -508,6 +508,7 @@ layerKeylines.ignoreWrap = false;
 layerKeylines.visible = true;
 layerKeylines.printable = true;
 
+
 // Guides
 var layerGuides= myDocument.layers.add();
 layerGuides.name = "Guides";
@@ -515,6 +516,7 @@ layerGuides.layerColor = UIColors.LIGHT_BLUE;
 layerGuides.ignoreWrap = false;
 layerGuides.visible = true;
 layerGuides.printable = false;
+
 
 // Removes the default layer "Layer 1"
 var defaultLayer = myDocument.layers.item("Layer 1");
@@ -1062,7 +1064,9 @@ app.changeTextPreferences = NothingEnum.nothing;
 //reset Typographers Quote Preference back to the users original setting
 app.activeDocument.textPreferences.typographersQuotes = userOriginalQuotePreference;	
 
-
+layerGuides.locked = true;
+layerKeylines.locked = true;
+layerApprovals.locked = true;
 
 }
 }
